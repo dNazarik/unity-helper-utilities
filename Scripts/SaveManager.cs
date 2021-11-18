@@ -3,7 +3,7 @@ using System.IO;
 using System.Linq;
 using UnityEngine;
 
-namespace Core
+namespace Hutilities
 {
 	public static class SaveManager
 	{

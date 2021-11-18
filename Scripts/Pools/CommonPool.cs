@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace Core
+namespace Hutilities
 {
 	public class CommonPool<T> where T : Object
 	{

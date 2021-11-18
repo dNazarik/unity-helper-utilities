@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Core.Raycast
+namespace Hutilities.Raycast
 {
 	public class RaycastController
 	{

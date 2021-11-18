@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Core.Raycast
+namespace Hutilities.Raycast
 {
 	public interface IRaycast2D
 	{
