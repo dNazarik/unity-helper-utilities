@@ -1,10 +1,16 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Core
 {
 	public static class Randomizer
 	{
+		public static bool IsHalfChance() => Random.value > 0.5f;
+		public static int GetNumberInRange(int from, int to) => Random.Range(from, to);
+		public static float GetNumberInRange(float from, float to) => Random.Range(from, to);
+		public static float GetNumberInRange(float fromTo) => Random.Range(-fromTo, fromTo);
+
 		public static int[] GetNumbers(int length, int min = 0, int max = int.MaxValue, bool sequence = false)
 		{
 			var numbers = new int[length];
@@ -34,10 +40,40 @@ namespace Core
 			return numbers;
 		}
 
-		public static float GetNumberInRange(float from, float to) => Random.Range(from, to);
-		public static int GetNumberInRange(int from, int to) => Random.Range(from, to);
+		public static int GetNumberInRangeExcept(int from, int to, int but)
+		{
+			var allowedValues = new List<int>();
+
+			for (var i = from; i < to; i++)
+			{
+				if (i == but)
+					continue;
+
+				allowedValues.Add(i);
+			}
+
+			return allowedValues.RandomElement();
+		}
+
+		public static int GetNumberInRangeExceptArray(int from, int to, int[] but)
+		{
+			var allowedValues = new List<int>();
+
+			for (var i = from; i < to; i++)
+			{
+				if (but.Contains(i))
+					continue;
+
+				allowedValues.Add(i);
+			}
+
+			return allowedValues.RandomElement();
+		}
 
 		public static Color GetRandomColor(bool isAlphaRandom)
 			=> new Color(Random.value, Random.value, Random.value, isAlphaRandom ? Random.value : 1.0f);
+
+		public static Vector3 GetRandomVector3()
+			=> new Vector3(GetNumberInRange(1.0f), GetNumberInRange(1.0f), GetNumberInRange(1.0f));
 	}
 }

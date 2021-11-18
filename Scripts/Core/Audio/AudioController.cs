@@ -6,7 +6,7 @@ namespace Core
 {
 	public interface IAudioController
 	{
-		(int, GameObject) PlayEffect(AudioClip sound, float volume, float stereoPan = 0.0f, float pitch = 1.0f,
+		(int, GameObject) PlayEffect(AudioClip sound, float volume = 1.0f, float stereoPan = 0.0f, float pitch = 1.0f,
 			bool isLoop = false,
 			Action onFinishCallback = null);
 	}
@@ -16,7 +16,7 @@ namespace Core
 		private static IAudioController _audioController;
 		public static void Init(IAudioController audioController) => _audioController = audioController;
 
-		public static (int, GameObject) PlayEffect(AudioClip sound, float volume, float stereoPan = 0.0f,
+		public static (int, GameObject) PlayEffect(AudioClip sound, float volume = 1.0f, float stereoPan = 0.0f,
 			float pitch = 1.0f,
 			bool isLoop = false,
 			Action onFinishCallback = null)

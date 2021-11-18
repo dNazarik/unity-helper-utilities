@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -6,9 +7,13 @@ namespace Core
 {
 	public static class Extensions
 	{
+		private const float PercentageFactor = 100.0f;
+
 		public static Vector2Int NumberToMatrixPos(int num, int extent) => new Vector2Int(num % extent, num / extent);
 		public static int MatrixPosToNumber(Vector2Int vector, int extent) => vector.y * extent + vector.x;
-		public static T RandomElement<T>(this IEnumerable<T> enumerable) => enumerable.RandomElementUsing<T>(new System.Random());
+
+		public static T RandomElement<T>(this IEnumerable<T> enumerable)
+			=> enumerable.RandomElementUsing<T>(new System.Random());
 
 		public static Vector2 ScreenPointToUiSpace(RectTransform parentRect, Camera camera, Vector3 screenPos)
 		{
@@ -39,6 +44,9 @@ namespace Core
 			int index = rand.Next(0, iEnumerable.Length);
 			return iEnumerable.ElementAt(index);
 		}
+
+		public static float Rounded(this float longValue, int digits = 2) => (float) Math.Round(longValue, digits);
+		public static float ToPercentage(this float value) => value * PercentageFactor;
 
 		public static void Shuffle<T>(this IList<T> list)
 		{
