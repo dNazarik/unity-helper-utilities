@@ -1,1 +1,1 @@
-# unity-helper-utilities
+Pack of helpers that will make your life easier :)

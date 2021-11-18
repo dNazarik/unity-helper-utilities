@@ -1,0 +1,14 @@
+{
+  "name": "com.dnazarik.hutilities",
+  "displayName": "Helper Utils",
+  "version": "1.0.0",
+  "unity": "2018.1",
+  "keywords": [
+    "dnazarik",
+    "utils",
+    "helper",
+    "hutils"
+  ],
+  "description": "Pack of helpers that will make your life easier :)",
+  "type": "tool"
+}
