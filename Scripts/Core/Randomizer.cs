@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace CoreByDnazarik
+namespace Core
 {
 	public static class Randomizer
 	{
@@ -39,7 +39,5 @@ namespace CoreByDnazarik
 
 		public static Color GetRandomColor(bool isAlphaRandom)
 			=> new Color(Random.value, Random.value, Random.value, isAlphaRandom ? Random.value : 1.0f);
-
-		public static bool IsHalfChance() => Random.value > 0.5f;
 	}
 }

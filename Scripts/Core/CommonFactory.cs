@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace CoreByDnazarik
+namespace Core
 {
 	public interface ICommonFactory
 	{
